@@ -1,24 +1,106 @@
-# avatarbnb
-avatar air bnb project
+# clothing-society
+clothing store
 
 
 
-# [AVATAR BNB]
+# [CLOTHING SOCIETY]
 
 render live link
 
 ^^^^^^^^^
-https://avatarbnb.onrender.com
+
 
 
 
 
 ## Database Schema Design
 
-![airbnb-database-schema]
+![Project Screenshot](images/dbpic.png "Screenshot of the Project")
 
-[airbnb-database-schema]: https://appacademy-open-assets.s3.us-west-1.amazonaws.com/Modular-Curriculum/content/week-12/airbnb-db-schema.png
-[airbnb-db-diagram-info]: https://appacademy-open-assets.s3.us-west-1.amazonaws.com/Modular-Curriculum/content/week-12/airbnb-db-diagram-info.txt
+
+```
+
+Table Users {
+  id int [pk, increment]
+  firstName varchar [not null]
+  lastName varchar [not null]
+  username varchar [not null, unique]
+  hashedPassword varchar [not null]
+  email varchar [not null, unique]
+  createdAt timestamp
+  updatedAt timestamp
+}
+
+Table Products {
+  id int [pk, increment]
+  ownerId int [ref: > Users.id]
+  name varchar [not null]
+  description varchar [not null]
+  price decimal
+  createdAt timestamp
+  updatedAt timestamp
+}
+
+Table Reviews {
+  id int [pk, increment]
+  productId int [ref: > Products.id]
+  userId int [ref: > Users.id]
+  review varchar [not null]
+  stars int [not null]
+  createdAt timestamp
+  updatedAt timestamp
+}
+
+Table Bookings {
+  id int [pk, increment]
+  productId int [ref: > Products.id]
+  userId int [ref: > Users.id]
+  startDate date [not null]
+  endDate date [not null]
+  createdAt timestamp
+  updatedAt timestamp
+}
+
+Table ProductImages {
+  id int [pk, increment]
+  productId int [ref: > Products.id]
+  url varchar
+  preview boolean [not null, default: false]
+  createdAt timestamp
+  updatedAt timestamp
+}
+
+Table ReviewImages {
+  id int [pk, increment]
+  reviewId int [ref: > Reviews.id]
+  url varchar
+  createdAt timestamp
+  updatedAt timestamp
+}
+
+```
+
+
+
+
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -32,46 +114,6 @@ https://avatarbnb.onrender.com
 
 ## API Documentation
 
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-# avatarbnb
-avatar air bnb project
-
-
-
-# [AVATAR BNB]
-
-
-
-
-
-
-## Database Schema Design
-
-![airbnb-database-schema]
-
-[airbnb-database-schema]: https://appacademy-open-assets.s3.us-west-1.amazonaws.com/Modular-Curriculum/content/week-12/airbnb-db-schema.png
-[airbnb-db-diagram-info]: https://appacademy-open-assets.s3.us-west-1.amazonaws.com/Modular-Curriculum/content/week-12/airbnb-db-diagram-info.txt
-
-
-
-
-
-
-
-
-
-
-
-## API Documentation
-
->>>>>>> spot-routes
 ## USER AUTHENTICATION/AUTHORIZATION
 
 ### All endpoints that require authentication
