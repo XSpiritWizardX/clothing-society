@@ -12,45 +12,45 @@ module.exports = {
     await Product.bulkCreate([
       {
        ownerId: 6,
-       name: 'Fire palace',
-       description: 'stay in prince zukos room',
-       price: 1000.00
+       name: 't-shirt',
+       description: 's,  to XXL white t-shirt',
+       price: 25.00
       },
       {
         ownerId: 4,
-        name: 'Southern Air Temple',
-        description: 'stay the night in aangs old room',
-        price: 1000.00
+        name: 'pants',
+        description: 's to XXL pants',
+        price: 25.00
        },
        {
         ownerId: 6,
-        name: 'Jasmine Dragon',
-        description: 'stay in the jasmine dragon and visit uncle Iroh',
-        price: 1000.00
+        name: 'hat',
+        description: 'white hat medium size',
+        price: 100.00
        },
        {
         ownerId: 3,
-        name: 'Secret Tunnels',
-        description: 'Get lost and find love in the secret tunnels',
-        price: 1000.00
+        name: 'shoes',
+        description: 'size 6- 13 mens whites shoes',
+        price: 100.00
        },
        {
         ownerId: 5,
-        name: 'Kataras Home',
-        description: 'Defend the southern water tribe from fire nation invaders',
+        name: 'watch',
+        description: 'white diamond mens watch',
         price: 1000.00
        },
        {
         ownerId: 1,
-        name: 'Kyoshi Island',
-        description: 'stay with the kyoshi warriors',
-        price: 1000.00
+        name: 'underwear',
+        description: 'white satin silk underwear',
+        price: 18.95
        },
        {
         ownerId: 2,
-        name: 'Master Swordsmith',
-        description: 'stay and train under a legendary master swordsman',
-        price: 1000.00
+        name: 'socks',
+        description: 'white socks ',
+        price: 9.99
        },
 
 

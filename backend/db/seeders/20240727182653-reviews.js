@@ -14,15 +14,15 @@ module.exports = {
       {
         productId: 1,
         userId: 3,
-        review: 'its not too bad if you arnt a prisoner',
-        stars: 1,
+        review: 'comfy t-shirt. i love it',
+        stars: 5,
         createdAt:Date.now(),
         updatedAt:Date.now()
        },
        {
          productId: 2,
          userId: 2,
-         review: 'very spacey people but love the atmosphere, i would recommend',
+         review: 'comfy jeans.',
          stars: 4,
          createdAt:Date.now(),
          updatedAt:Date.now()
@@ -30,15 +30,15 @@ module.exports = {
         {
           productId: 3,
           userId: 1,
-          review: 'they serve the best tea and tell the best stories',
-          stars: 5,
+          review: 'this hat sucks',
+          stars: 1,
           createdAt:Date.now(),
           updatedAt:Date.now()
          },
          {
           productId: 4,
           userId: 5,
-          review: 'I kissed my true love here. ',
+          review: 'I LOVE IT ',
           stars: 5,
           createdAt:Date.now(),
           updatedAt:Date.now()
