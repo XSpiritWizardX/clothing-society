@@ -1,8 +1,8 @@
 {
 
-  "name": "avatarbnb",
+  "name": "clothing-society",
   "version": "1.0.0",
-  "description": "avatar air bnb project",
+  "description": "clothing society project",
   "main": "index.js",
   "scripts": {
     "install": "npm --prefix backend install backend",

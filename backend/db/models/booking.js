@@ -14,13 +14,13 @@ module.exports = (sequelize, DataTypes) => {
           { foreignKey: 'userId', onDelete: "Cascade"}
       );
       Booking.belongsTo(
-        models.Spot,
-          { foreignKey: 'spotId', onDelete: "Cascade"}
+        models.Product,
+          { foreignKey: 'productId', onDelete: "Cascade"}
       );
     }
   }
   Booking.init({
-    spotId: DataTypes.INTEGER,
+    productId: DataTypes.INTEGER,
     userId: DataTypes.INTEGER,
     startDate: DataTypes.STRING,
     endDate: DataTypes.STRING

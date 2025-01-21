@@ -1,5 +1,5 @@
 'use strict';
-const {SpotImage} = require("../models")
+const {ProductImage} = require("../models")
 
 let options = {};
 if (process.env.NODE_ENV === 'production') {
@@ -9,26 +9,26 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await SpotImage.bulkCreate([
+    await ProductImage.bulkCreate([
 
 
       {
-        spotId: 1,
+        productId: 1,
         url:"http://img3.wikia.nocookie.net/__cb20130916095007/avatar/images/2/23/Restored_Southern_Air_Temple.png",
         preview:false
       },
       {
-        spotId: 2,
+        productId: 2,
         url:"https://tse2.mm.bing.net/th?id=OIP.KJn-2oSVWGR6_zC8rDe1iAHaEK&pid=Api&P=0&h=220",
         preview:true
       },
        {
-        spotId: 3,
+        productId: 3,
         url:"http://img3.wikia.nocookie.net/__cb20130916095007/avatar/images/2/23/Restored_Southern_Air_Temple.png",
         preview:true
       },
       {
-        spotId: 4,
+        productId: 4,
         url:"https://tse2.mm.bing.net/th?id=OIP.KJn-2oSVWGR6_zC8rDe1iAHaEK&pid=Api&P=0&h=220",
         preview:true
        },
@@ -46,10 +46,10 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    options.tableName = 'SpotImages';
+    options.tableName = 'ProductImages';
     const Op = Sequelize.Op;
     return queryInterface.bulkDelete(options, {
-      spotId: { [Op.in]: [1,4] }
+      productId: { [Op.in]: [1,4] }
     }, {});
 
   }

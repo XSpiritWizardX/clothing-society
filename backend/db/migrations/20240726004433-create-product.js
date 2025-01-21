@@ -8,7 +8,7 @@ if (process.env.NODE_ENV === 'production') {
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Spots', {
+    await queryInterface.createTable('Products', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -24,24 +24,7 @@ module.exports = {
         onDelete: 'CASCADE',
         onUpdate: "CASCADE"
       },
-      address: {
-        type: Sequelize.STRING
-      },
-      city: {
-        type: Sequelize.STRING
-      },
-      state: {
-        type: Sequelize.STRING
-      },
-      country: {
-        type: Sequelize.STRING
-      },
-      lat: {
-        type: Sequelize.DECIMAL
-      },
-      lng: {
-        type: Sequelize.DECIMAL
-      },
+
       name: {
         type: Sequelize.STRING
       },
@@ -62,7 +45,7 @@ module.exports = {
     }, options);
   },
   async down(queryInterface, Sequelize) {
-    options.tableName = 'Spots'
+    options.tableName = 'Products'
     // await queryInterface.removeConstraint("avatar_bnb.Bookings", "Bookings_spotId_fkey")
     // await queryInterface.removeConstraint("avatar_bnb.Reviews", "Reviews_spotId_fkey")
     // await queryInterface.removeConstraint("avatar_bnb.SpotImages", "SpotImages_spotId_fkey")

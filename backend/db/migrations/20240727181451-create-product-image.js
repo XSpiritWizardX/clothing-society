@@ -6,21 +6,21 @@ if (process.env.NODE_ENV === 'production') {
 }
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('SpotImages', {
+    await queryInterface.createTable('ProductImages', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      spotId: {
+      productId: {
         type: Sequelize.INTEGER,
         references:{
-          model:"Spots",
+          model:"Products",
           id:"id"
         },
         onDelete: 'CASCADE',
-       
+
       },
       url: {
         type: Sequelize.STRING
@@ -39,6 +39,6 @@ module.exports = {
     },options);
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('SpotImages');
+    await queryInterface.dropTable('ProductImages');
   }
 };

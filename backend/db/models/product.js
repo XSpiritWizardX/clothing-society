@@ -1,7 +1,7 @@
 'use strict';
 const {Model} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Spot extends Model {
+  class Product extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -9,40 +9,34 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-            Spot.belongsTo(
+            Product.belongsTo(
             models.User,
               { foreignKey: 'ownerId' }
           );
-          Spot.hasMany(
+          Product.hasMany(
             models.Review,
-              { foreignKey:'spotId', onDelete: 'CASCADE' }
+              { foreignKey:'productId', onDelete: 'CASCADE' }
              );
-             Spot.hasMany(
-              models.SpotImage,
-                { foreignKey:'spotId', onDelete: 'CASCADE' }
+             Product.hasMany(
+              models.ProductImage,
+                { foreignKey:'productId', onDelete: 'CASCADE' }
                );
-               Spot.hasMany(
+               Product.hasMany(
                 models.Booking,
-                  { foreignKey:'spotId', onDelete: 'CASCADE' }
+                  { foreignKey:'productId', onDelete: 'CASCADE' }
                  );
 
 
     }
   }
-  Spot.init({
+  Product.init({
     ownerId: DataTypes.INTEGER,
-    address: DataTypes.STRING,
-    city: DataTypes.STRING,
-    state: DataTypes.STRING,
-    country: DataTypes.STRING,
-    lat: DataTypes.DECIMAL,
-    lng: DataTypes.DECIMAL,
     name: DataTypes.STRING,
     description: DataTypes.STRING,
     price: DataTypes.DECIMAL
   }, {
     sequelize,
-    modelName: 'Spot',
+    modelName: 'Product',
   });
-  return Spot;
+  return Product;
 };

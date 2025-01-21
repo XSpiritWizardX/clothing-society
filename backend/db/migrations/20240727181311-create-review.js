@@ -13,10 +13,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      spotId: {
+      productId: {
         type: Sequelize.INTEGER,
         references:{
-          model:"Spots",
+          model:"Products",
           id:"id"
         },
         onDelete: 'CASCADE',
@@ -48,8 +48,8 @@ module.exports = {
     },options);
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('SpotImages');
+    await queryInterface.dropTable('ProductImages');
     await queryInterface.dropTable('Reviews');
-    await queryInterface.dropTable('Spots');
+    await queryInterface.dropTable('Products');
   }
 };

@@ -15,11 +15,11 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      spotId: {
+      productId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references:{
-          model:"Spots",
+          model:"Products",
           id:"id"
         },
         onDelete: 'CASCADE',
