@@ -79,12 +79,12 @@ const validateQueryParams = (queryParams) => {
   }
 
   // Latitude/Longitude validation
-  if (queryParams.minLat && queryParams.maxLat && queryParams.minLat > queryParams.maxLat) {
-    errors.minLat = 'Minimum latitude must be less than or equal to maximum latitude';
-  }
-  if (queryParams.minLng && queryParams.maxLng && queryParams.minLng > queryParams.maxLng) {
-    errors.minLng = 'Minimum longitude must be less than or equal to maximum longitude';
-  }
+  // if (queryParams.minLat && queryParams.maxLat && queryParams.minLat > queryParams.maxLat) {
+  //   errors.minLat = 'Minimum latitude must be less than or equal to maximum latitude';
+  // }
+  // if (queryParams.minLng && queryParams.maxLng && queryParams.minLng > queryParams.maxLng) {
+  //   errors.minLng = 'Minimum longitude must be less than or equal to maximum longitude';
+  // }
 
   return errors;
 };
